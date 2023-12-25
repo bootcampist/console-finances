@@ -108,15 +108,13 @@ function hundredthiser (number) {
 };
 
 //Total  Months
-console.log(totalMonths);
+totalMonths;
 
 
 //Total
 for (let i=0; i< totalMonths; i++) {
   total = total + finances[i][1];
 }
-
-console.log(total);
 
 
 //Average Change
@@ -125,8 +123,6 @@ for (let i=0; i<totalMonths-1; i++) {
 }
 aveChange= change/(totalMonths-1);
 aveChange = hundredthiser(aveChange);
-
-console.log(aveChange);
 
 
 //Greatest Increase in Profits
@@ -143,7 +139,6 @@ for (let i=0; i<totalMonths-1; i++) {
       break;
   }
 }
-console.log(increase);
 
 
 //Greatest Decrease in Profits
@@ -160,5 +155,11 @@ for (let i=0; i<totalMonths-1; i++) {
       break;
   }
 }
-console.log(decrease);
 
+console.log('Financial Analysis');
+console.log('----------------');
+console.log('Total Months: '+ totalMonths);
+console.log('Total: $'+ total);
+console.log('Average Change: '+ aveChange);
+console.log('Greatest Increase in Profits/Losses: '+ increase[0] + ' ($' + increase[1] + ')');
+console.log('Greatest Decrease in Profits/Losses: '+ decrease[0] + ' ($' + decrease[1] + ')');
