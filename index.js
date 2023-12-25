@@ -86,3 +86,79 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+//Global Variables
+const totalMonths = finances.length;
+let total=0;
+let change=0;
+let aveChange;
+let increase = [0,0];
+let month;
+let difference=0;
+let decrease = [0,0];
+
+//Decimal Places
+function hundredthiser (number) {
+  let check = (number - (Math.floor(number)));
+  if (check===0) {
+  } else {
+  number= Math.round(number*100)/100;
+  }
+  return number;
+};
+
+//Total  Months
+console.log(totalMonths);
+
+
+//Total
+for (let i=0; i< totalMonths; i++) {
+  total = total + finances[i][1];
+}
+
+console.log(total);
+
+
+//Average Change
+for (let i=0; i<totalMonths-1; i++) {
+  change = change + (finances[i+1][1] - finances[i][1]);
+}
+aveChange= change/(totalMonths-1);
+aveChange = hundredthiser(aveChange);
+
+console.log(aveChange);
+
+
+//Greatest Increase in Profits
+for (let i=0; i<totalMonths-1; i++) {
+  month = finances[i+1][0];
+  difference = finances[i+1][1] - finances[i][1];
+  
+  switch (difference > increase[1]) {
+    case true:
+      increase[0]=month;
+      increase[1]=difference;
+      break;
+    default: 
+      break;
+  }
+}
+console.log(increase);
+
+
+//Greatest Decrease in Profits
+for (let i=0; i<totalMonths-1; i++) {
+  month = finances[i+1][0];
+  difference = finances[i+1][1] - finances[i][1];
+  
+  switch (difference < decrease[1]) {
+    case true:
+      decrease[0]=month;
+      decrease[1]=difference;
+      break;
+    default: 
+      break;
+  }
+}
+console.log(decrease);
+
