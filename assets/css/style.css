@@ -4,6 +4,7 @@
     
 }
 
+/*Background and Containers*/
 #container {
     height: 100vh;
     background-image: url('../images/chess-curves.png');
@@ -29,6 +30,8 @@
     height: 35vw;
     width: 35vw;
 }
+
+/*Content*/
 .header-text {
     text-align: center;
     font-family: 'Noto Serif JP', serif;
@@ -42,4 +45,26 @@
 .analysis-text {
     font-weight: 700;
     color: #BF9000;
+}
+
+.main-text {
+    margin-top: 3vw;
+    margin-left: 1.5vw;
+    height: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.items {
+    font-size: 1.5vw;
+    color: #BF9000;
+    display: flex;
+    align-items: center;
+}
+
+.values {
+    font-size: 1.8vw;
+    color: white;
+    margin-left: 1.5vw;  
 }

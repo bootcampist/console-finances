@@ -99,7 +99,8 @@ let decrease = [0,0];
 let values = [];
 let titles = ['Financial Analysis']
 let dash = "-";
-const headings = ['Total Months: ','Total: $','Average Change: ','Greatest Increase in Profits/Losses: ','Greatest Decrease in Profits/Losses: '];
+const headings = ['Total Months: ','Total: ','Average Change: ','Greatest Increase in Profits/Losses: ','Greatest Decrease in Profits/Losses: '];
+let number =1;
 
 //Decimal Places
 function hundredthiser (number) {
@@ -124,7 +125,7 @@ function amountTotal () {
   for (let i=0; i< totalMonths; i++) {
     total = total + finances[i][1];
   }
-  values.push(total);
+  values.push(' $' + total);
 }
 
 
@@ -205,6 +206,23 @@ greatestDecrease();
 logToConsole();
 }
 
+//Display Financial Analysis
+
+function renderAnalysis () {
+  for (let i=0; i<headings.length; i++) {
+  let headingId ="heading";
+  let valueId = "value";
+  headingId= headingId + number;
+  valueId=valueId + number;
+
+  document.getElementById(headingId).innerHTML = headings[i];
+  document.getElementById(valueId).innerHTML = values[i];
+  number++;
+  }
+
+}
+
 financialAnalysis();
+renderAnalysis();
 
 
