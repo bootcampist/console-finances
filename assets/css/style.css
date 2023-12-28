@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+#container {
+    height: 100vh;
+    background-image: url('../images/chess-curves.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+    align-items:center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+#background-box {
+    height: 37vw;
+    width: 37vw;
+    background-color: #181717;
+    margin-left: 7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box-container {
+    height: 35vw;
+    width: 35vw;
+}
+.header-text {
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8vw;
+}
+
+.financial-text {
+    font-weight: 400;
+}
+
+.analysis-text {
+    font-weight: 700;
+    color: #BF9000;
+}

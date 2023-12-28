@@ -88,7 +88,7 @@ var finances = [
 ];
 
 //Global Variables
-const totalMonths = finances.length;
+const totalMonths=finances.length;
 let total=0;
 let change=0;
 let aveChange;
@@ -96,6 +96,10 @@ let increase = [0,0];
 let month;
 let difference=0;
 let decrease = [0,0];
+let values = [];
+let titles = ['Financial Analysis']
+let dash = "-";
+const headings = ['Total Months: ','Total: $','Average Change: ','Greatest Increase in Profits/Losses: ','Greatest Decrease in Profits/Losses: '];
 
 //Decimal Places
 function hundredthiser (number) {
@@ -107,59 +111,100 @@ function hundredthiser (number) {
   return number;
 };
 
-//Total  Months
-totalMonths;
+
+//Total Months
+function monthTotal () {
+  //totalMonths=finances.length;
+  values.push(totalMonths);
+}
 
 
-//Total
-for (let i=0; i< totalMonths; i++) {
-  total = total + finances[i][1];
+//Total Amount
+function amountTotal () {
+  for (let i=0; i< totalMonths; i++) {
+    total = total + finances[i][1];
+  }
+  values.push(total);
 }
 
 
 //Average Change
-for (let i=0; i<totalMonths-1; i++) {
-  change = change + (finances[i+1][1] - finances[i][1]);
+function averageChange () {
+  for (let i=0; i<totalMonths-1; i++) {
+    change = change + (finances[i+1][1] - finances[i][1]);
+  }
+  aveChange= change/(totalMonths-1);
+  aveChange = parseFloat(aveChange.toFixed(2));
+  values.push(aveChange);
 }
-aveChange= change/(totalMonths-1);
-aveChange = hundredthiser(aveChange);
 
 
 //Greatest Increase in Profits
-for (let i=0; i<totalMonths-1; i++) {
-  month = finances[i+1][0];
-  difference = finances[i+1][1] - finances[i][1];
-  
-  switch (difference > increase[1]) {
-    case true:
-      increase[0]=month;
-      increase[1]=difference;
-      break;
-    default: 
-      break;
+function greatestIncrease () {
+  for (let i=0; i<totalMonths-1; i++) {
+    month = finances[i+1][0];
+    difference = finances[i+1][1] - finances[i][1];
+    
+    switch (difference > increase[1]) {
+      case true:
+        increase[0]=month;
+        increase[1]=difference;
+        break;
+      default: 
+        break;
+    }
   }
+  values.push(increase[0] + ' ($' + increase[1] + ')');
 }
 
 
 //Greatest Decrease in Profits
-for (let i=0; i<totalMonths-1; i++) {
-  month = finances[i+1][0];
-  difference = finances[i+1][1] - finances[i][1];
+function greatestDecrease () {
+  for (let i=0; i<totalMonths-1; i++) {
+    month = finances[i+1][0];
+    difference = finances[i+1][1] - finances[i][1];
+    
+    switch (difference < decrease[1]) {
+      case true:
+        decrease[0]=month;
+        decrease[1]=difference;
+        break;
+      default: 
+        break;
+    }
+  }
+  values.push(decrease[0] + ' ($' + decrease[1] + ')');
+}
+
+
+//Log Data to Console
+function logToConsole () {
+  for (let i=0; i<15; i++) {
+    dash = dash+= "-";
+  }
+  titles.push(dash);
+
+  for (let i=0; i<titles.length; i++) {
+    console.log(titles[i]);
+  }
   
-  switch (difference < decrease[1]) {
-    case true:
-      decrease[0]=month;
-      decrease[1]=difference;
-      break;
-    default: 
-      break;
+  for (let i=0; i<headings.length; i++) {
+    console.log(headings[i] + values[i]);
   }
 }
 
-console.log('Financial Analysis');
-console.log('----------------');
-console.log('Total Months: '+ totalMonths);
-console.log('Total: $'+ total);
-console.log('Average Change: '+ aveChange);
-console.log('Greatest Increase in Profits/Losses: '+ increase[0] + ' ($' + increase[1] + ')');
-console.log('Greatest Decrease in Profits/Losses: '+ decrease[0] + ' ($' + decrease[1] + ')');
+
+//Carry Out the Financial Analysis
+function financialAnalysis () {
+monthTotal();
+amountTotal();
+averageChange();
+greatestIncrease();
+greatestDecrease();
+
+logToConsole();
+}
+
+financialAnalysis();
+
+
