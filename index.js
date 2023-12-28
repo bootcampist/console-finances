@@ -206,8 +206,8 @@ greatestDecrease();
 logToConsole();
 }
 
-//Display Financial Analysis
 
+//Display Financial Analysis
 function renderAnalysis () {
   for (let i=0; i<headings.length; i++) {
   let headingId ="heading";

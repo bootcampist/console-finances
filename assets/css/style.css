@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    
 }
 
 /*Background and Containers*/
@@ -10,8 +9,8 @@
     background-image: url('../images/chess-curves.png');
     background-repeat: no-repeat;
     background-size: cover;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     font-family: 'Roboto', sans-serif;
     color: white;
 }
@@ -31,7 +30,7 @@
     width: 35vw;
 }
 
-/*Content*/
+/*Heading*/
 .header-text {
     text-align: center;
     font-family: 'Noto Serif JP', serif;
@@ -47,9 +46,15 @@
     color: #BF9000;
 }
 
+/*Financial Analysis Content*/
+.text-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5vw;
+}
+
 .main-text {
-    margin-top: 3vw;
-    margin-left: 1.5vw;
+    margin: auto;
     height: 25vw;
     display: flex;
     flex-direction: column;
@@ -57,14 +62,19 @@
 }
 
 .items {
-    font-size: 1.5vw;
-    color: #BF9000;
     display: flex;
     align-items: center;
+    justify-content: left;
+}
+
+.headings {
+    font-size: 1.5vw;
+    color: #BF9000;
+    width: 13vw;
 }
 
 .values {
     font-size: 1.8vw;
     color: white;
-    margin-left: 1.5vw;  
+    margin-left: 1.5vw; 
 }
