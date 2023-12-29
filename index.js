@@ -100,6 +100,8 @@ let values = [];
 let titles = ['Financial Analysis']
 let dash = "-";
 const headings = ['Total Months: ','Total: ','Average Change: ','Greatest Increase in Profits/Losses: ','Greatest Decrease in Profits/Losses: '];
+let headingId ="heading";
+let valueId = "value";
 let number =1;
 
 //Decimal Places
@@ -125,7 +127,7 @@ function amountTotal () {
   for (let i=0; i< totalMonths; i++) {
     total = total + finances[i][1];
   }
-  values.push(' $' + total);
+  values.push('$' + total.toLocaleString("en-GB"));
 }
 
 
@@ -136,7 +138,7 @@ function averageChange () {
   }
   aveChange= change/(totalMonths-1);
   aveChange = parseFloat(aveChange.toFixed(2));
-  values.push(aveChange);
+  values.push(aveChange.toLocaleString("en-GB"));
 }
 
 
@@ -155,7 +157,7 @@ function greatestIncrease () {
         break;
     }
   }
-  values.push(increase[0] + ' ($' + increase[1] + ')');
+  values.push(increase[0] + ' ($' + increase[1].toLocaleString("en-GB") + ')');
 }
 
 
@@ -174,7 +176,7 @@ function greatestDecrease () {
         break;
     }
   }
-  values.push(decrease[0] + ' ($' + decrease[1] + ')');
+  values.push(decrease[0] + ' ($' + decrease[1].toLocaleString("en-GB") + ')');
 }
 
 
@@ -207,16 +209,17 @@ logToConsole();
 }
 
 
-//Display Financial Analysis
+//Display Financial Analysis in the Browser
 function renderAnalysis () {
   for (let i=0; i<headings.length; i++) {
-  let headingId ="heading";
-  let valueId = "value";
   headingId= headingId + number;
   valueId=valueId + number;
 
   document.getElementById(headingId).innerHTML = headings[i];
   document.getElementById(valueId).innerHTML = values[i];
+  
+  headingId ="heading";
+  valueId = "value";
   number++;
   }
 
@@ -224,5 +227,4 @@ function renderAnalysis () {
 
 financialAnalysis();
 renderAnalysis();
-
 

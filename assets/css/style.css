@@ -6,7 +6,7 @@
 /*Background and Containers*/
 #container {
     height: 100vh;
-    background-image: url('../images/chess-curves.png');
+    background-image: url('../images/chess-curves-cropped.webp');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
