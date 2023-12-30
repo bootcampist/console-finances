@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    --size: vw;
 }
 
 /*Background and Containers*/
@@ -77,4 +78,42 @@
     font-size: 1.8vw;
     color: white;
     margin-left: 1.5vw; 
+}
+
+@media screen and (max-width: 652px) {
+    #background-box {
+        height: 40vh;
+        width: 40vh;
+        margin: auto;
+    }
+    
+    #box-container {
+        height: 38vh;
+        width: 38vh;
+    }
+    
+    /*Heading*/
+    .header-text {
+        font-size: 2vh;
+    }
+
+    /*Financial Analysis Content*/
+    .text-container {
+        margin-top: 2.7vh;
+    }
+
+    .main-text {
+        height: 27vh;
+    }
+
+    .headings {
+        font-size: 1.7vh;
+        width: 15vh;
+    }
+
+    .values {
+        font-size: 2vh;
+        margin-left: 1.7vh; 
+    }   
+
 }
