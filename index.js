@@ -88,21 +88,21 @@ var finances = [
 ];
 
 //Global Variables
-const totalMonths=finances.length;
-let total=0;
-let change=0;
+const totalMonths = finances.length;
+let total = 0;
+let change = 0;
 let aveChange;
 let increase = [0,0];
 let month;
-let difference=0;
+let difference = 0;
 let decrease = [0,0];
 let values = [];
 let titles = ['Financial Analysis']
 let dash = "-";
 const headings = ['Total Months: ','Total: ','Average Change: ','Greatest Increase in Profits/Losses: ','Greatest Decrease in Profits/Losses: '];
-let headingId ="heading";
+let headingId = "heading";
 let valueId = "value";
-let number =1;
+let number = 1;
 
 //Decimal Places
 function hundredthiser (number) {
@@ -138,7 +138,7 @@ function averageChange () {
   }
   aveChange= change/(totalMonths-1);
   aveChange = parseFloat(aveChange.toFixed(2));
-  values.push(aveChange.toLocaleString("en-GB"));
+  values.push('$' + aveChange.toLocaleString("en-GB"));
 }
 
 
@@ -212,8 +212,8 @@ logToConsole();
 //Display Financial Analysis in the Browser
 function renderAnalysis () {
   for (let i=0; i<headings.length; i++) {
-  headingId= headingId + number;
-  valueId=valueId + number;
+  headingId = headingId + number;
+  valueId = valueId + number;
 
   document.getElementById(headingId).innerHTML = headings[i];
   document.getElementById(valueId).innerHTML = values[i];
