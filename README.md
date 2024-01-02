@@ -5,6 +5,7 @@
 
 The Console Finances project was created using JavaScript with the aim of providing a financial analysis for a company. The processed data was then logged to the console. With the addition of HTML, CSS and Photoshop, the data can also be viewed directly on the Console Finances page.
 [A screenshot of the website](./assets/images/screenshot.png)
+![Screenshot](https://github.com/bootcampist/console-finances/assets/152117886/e7b41115-fad9-4a0b-b35d-3a7e14ef6635)
 
 ## Installation
 
